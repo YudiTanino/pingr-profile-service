@@ -4,6 +4,8 @@
   "description": "Template API for MAC0475 2021",
   "main": "src/api.js",
   "scripts": {
+    "start:dev": "nodemon src/api.js",
+    "start:prod": "node src/api.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -15,5 +17,8 @@
   "bugs": {
     "url": "https://gitlab.com/uspcodelab/courses/MAC0475-2021/template-api/issues"
   },
-  "homepage": "https://gitlab.com/uspcodelab/courses/MAC0475-2021/template-api#readme"
+  "homepage": "https://gitlab.com/uspcodelab/courses/MAC0475-2021/template-api#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  }
 }

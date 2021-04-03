@@ -35,3 +35,16 @@ npm-rm-prod-package:
 
 shell-run:
 	@docker-compose run --rm api /bin/bash
+
+shell-exec:
+	@docker-compose exec api /bin/bash
+
+################################################################################
+##                                API EXECUTION                               ##
+################################################################################
+
+api-start:
+	@docker-compose up
+
+api-stop:
+	@docker-compose down
