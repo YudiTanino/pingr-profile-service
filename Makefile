@@ -30,6 +30,18 @@ npm-rm-prod-package:
 	@docker-compose run --rm api npm uninstall --save-prod $(strip $(PACKAGE))
 
 ################################################################################
+##                               CODE PROCESSING                              ##
+################################################################################
+
+code-check:
+	@docker-compose run --rm api npm run format:check
+	@docker-compose run --rm api npm run lint:check
+
+code-fix:
+	@docker-compose run --rm api npm run format:fix
+	@docker-compose run --rm api npm run lint:fix
+
+################################################################################
 ##                               SHELL EXECUTION                              ##
 ################################################################################
 
