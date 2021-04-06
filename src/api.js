@@ -1,10 +1,11 @@
 const express = require("express");
 
-const api = express();
-const PORT = process.env.API_PORT;
+module.exports = function () {
+  const api = express();
 
-api.use(express.json());
+  api.use(express.json());
 
-api.get("/", (req, res) => res.json("Hello, World!"));
+  api.get("/", (req, res) => res.json("Hello, World!"));
 
-api.listen(PORT, () => console.log(`Listening at http://localhost:${PORT}`));
+  return api;
+};
