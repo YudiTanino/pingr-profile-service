@@ -43,6 +43,12 @@ RUN apt-get update -y -qq && xargs -ra apt-packages.txt apt-get install -y -qq
 # Run commands as non-root user
 USER ${API_USER}:${API_GROUP}
 
+# Set API port
+ENV API_PORT=3000
+
+# Expose API port
+EXPOSE ${API_PORT}
+
 ################################################################################
 ##                              DEVELOPMENT IMAGE                             ##
 ################################################################################
