@@ -18,6 +18,12 @@ services:
       - ".env"
     depends_on:
       - "broker"
+      - "mongo"
 
   broker:
     image: nats-streaming:0.21.2-alpine3.13
+
+  mongo:
+    image: mongo:3.6.23-xenial
+    volumes:
+      - "/data/db"
