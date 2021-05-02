@@ -1,9 +1,10 @@
 const API = require("./api.js");
 const stanConn = require("./nats");
-const mongoClient = require('./mongo');
+const mongoClient = require("./mongo");
 
 const PORT = process.env.API_PORT;
 const ALLOWED_ORIGINS = JSON.parse(process.env.API_ALLOWED_ORIGINS);
+const secret = process.env.API_SECRET;
 
 const corsOptions = {
   origin: function (origin, callback) {
@@ -15,19 +16,18 @@ const corsOptions = {
   },
 };
 
-const api = API(corsOptions);
-
 async function main() {
-  api.listen(PORT, () => console.log(`Listening at http://localhost:${PORT}`));
-
   stanConn.on("connect", () => console.log("Connected to NATS Streaming"));
 
   try {
     await mongoClient.connect();
-    console.log('Connected to MongoDB')
+    console.log("Connected to MongoDB");
   } catch (e) {
-    console.dir(e)
+    console.dir(e);
   }
+
+  const api = API(corsOptions, { mongoClient, stanConn, secret });
+  api.listen(PORT, () => console.log(`Listening at http://localhost:${PORT}`));
 }
 
-main()
+main();

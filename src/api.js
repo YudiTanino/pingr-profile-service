@@ -1,7 +1,8 @@
+const jwt = require("jsonwebtoken");
 const express = require("express");
 const cors = require("cors");
 
-module.exports = function (corsOptions) {
+module.exports = function (corsOptions, { stanConn, mongoClient, secret }) {
   const api = express();
 
   api.use(express.json());
