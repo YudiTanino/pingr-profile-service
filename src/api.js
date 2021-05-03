@@ -1,8 +1,9 @@
 const jwt = require("jsonwebtoken");
 const express = require("express");
 const cors = require("cors");
+const {v4: uuid} = require('uuid');
 
-module.exports = function (corsOptions, { stanConn, mongoClient, secret }) {
+module.exports = function (corsOptions, {stanConn, mongoClient, secret}) {
   const api = express();
 
   api.use(express.json());
