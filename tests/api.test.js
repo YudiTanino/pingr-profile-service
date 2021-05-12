@@ -70,7 +70,9 @@ describe("The project", () => {
       .set("Authentication", `Bearer ${correctToken}`);
 
     expect(response.status).toBe(200);
-    expect(mockColl.deleteOne).toHaveBeenCalled();
+    expect(mockColl.findOne).toHaveBeenCalled();
+    expect(stanConn.publish).toHaveBeenCalled();
+    expect(mockColl.deleteOne).not.toHaveBeenCalled();
   });
 
   it("blocks a registered user to delete anothers account", async () => {
@@ -82,7 +84,9 @@ describe("The project", () => {
       .delete(`/users/${uid}`)
       .set("Authentication", `Bearer ${wrongToken}`);
 
-    expect(response.status).toBe(401);
+    expect(response.status).toBe(403);
+    expect(mockColl.findOne).not.toHaveBeenCalled();
+    expect(stanConn.publish).not.toHaveBeenCalled();
     expect(mockColl.deleteOne).not.toHaveBeenCalled();
   });
 });
