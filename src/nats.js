@@ -7,10 +7,6 @@ module.exports = function (mongoClient) {
 
   conn.on("connect", () => {
     console.log("Connected to NATS Streaming");
-
-    /* ******************* */
-    /* YOUR CODE GOES HERE */
-    /* ******************* */
   });
 
   return conn;

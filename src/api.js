@@ -11,9 +11,5 @@ module.exports = function (corsOptions, { stanConn, mongoClient, secret }) {
 
   api.get("/", (req, res) => res.json("Hello, World!"));
 
-  /* ******************* */
-  /* YOUR CODE GOES HERE */
-  /* ******************* */
-
   return api;
 };
