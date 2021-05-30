@@ -30,7 +30,7 @@ module.exports = function (corsOptions, { stanConn, mongoClient, secret }) {
     
     if(!header.authentication){
       isReqValid = false;
-      res.status(401).json({
+      return res.status(401).json({
         "error": "Access Token not found",
       });
     };
