@@ -1,5 +1,5 @@
 export const state = () => ({
-    user: {             
+    user: {
         _id: '',
         name: '',
         username: "",
@@ -18,11 +18,19 @@ export const state = () => ({
         profilePictureUrl: '',
         coverPictureUrl: '',
         location: ''
-      }
+    },
+    connections: {
+        follows: [],
+        followers: []
+    },
 })
 
 export const mutations = {
     insert(context, data){
         context.user = data
+    },
+    set_connections(context, data) {
+        context.connections.follow = (data.follows) ? data.follows : [];
+        context.connections.followers = (data.followers) ? data.followers : [];
     }
 }
