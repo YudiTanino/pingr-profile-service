@@ -19,6 +19,16 @@ export default {
     ]
   },
 
+  router: {
+    routes:[
+      {
+        path: ':id',
+        component: 'pages/profile/_id.vue',
+        name: 'profile-id'
+      }
+    ]
+  },
+
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
   ],

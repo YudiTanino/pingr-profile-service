@@ -6,13 +6,9 @@
 
 <script>
 export default {
-    data: () => {
-        return {
-            creationDate: {
-                day: 14,
-                month: 7,
-                year: 2021
-            },
+    computed: {
+        creationDate() {
+            return this.$store.state.profile.user.creationDate
         }
     },
 }

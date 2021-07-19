@@ -2,6 +2,7 @@ export const state = () => ({
     user: {             
         _id: '',
         name: '',
+        username: "",
         public: true,
         creationDate: {
           day: 1,

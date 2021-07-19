@@ -6,9 +6,9 @@
 
 <script>
 export default {
-    data: () => {
-        return {
-            username: '<username>'
+    computed: {
+        username() {
+            return this.$store.state.profile.user.username
         }
     },
 }

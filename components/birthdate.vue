@@ -6,13 +6,9 @@
 
 <script>
 export default {
-    data: () => {
-        return {
-            birthdate: {
-                day: 1,
-                month: 1,
-                year: 2000
-            },
+    computed: {
+        birthdate() {
+            return this.$store.state.profile.user.birthdate
         }
     },
 }
