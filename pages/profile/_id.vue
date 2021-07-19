@@ -1,18 +1,23 @@
 <template>
     <div>
-        <username />
-        <name />
-        <creationDate v-if="isPublic" />
-        <birthdate v-if="isPublic" />
-        <description />
-        <location v-if="isPublic" />
+        <div>
+            <username />
+            <name />
+            <creationDate v-if="isPublic" />
+            <birthdate v-if="isPublic" />
+            <description />
+            <location v-if="isPublic" />
+        </div>
+        <Connections/>
     </div>
 </template>
 
 <script>
 import {getUser} from "../../api"
+import Connections from "~/components/connections.vue"
 
 export default {
+    components: { Connections },
     data: () => {
         return {
             isPublic: true,
