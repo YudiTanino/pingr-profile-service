@@ -1,9 +1,9 @@
 <template>
-<div class="flex items-center justify-center">
-    <img class="m-2" style="height: 1.75em" src="~/static/connections-icon.png"/>
-    <p class="m-2">followers: {{ followers.length }}</p>
-    <p class="m-2">following: {{ follows.length }}</p>
-</div>
+    <div class="flex items-center justify-left">
+        <img style="height: 4em" src="~/static/connections-icon.png"/>
+        <p class="ml-1 mr-3 text-lg text-white">Followers: {{ followers.length }}</p>
+        <p class="ml-4 text-lg text-white">Following: {{ follows.length }}</p>
+    </div>
 </template>
 
 <script>
