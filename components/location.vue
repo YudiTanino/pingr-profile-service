@@ -1,15 +1,11 @@
 <template>
     <div>
-        <span>{{location}}</span>
+        <property property="Localização" v-bind:value="value"  />
     </div>
 </template>
 
 <script>
 export default {
-    computed: {
-        location() {
-            return this.$store.state.profile.user.location
-        }
-    },
+    props: ['value']
 }
 </script>

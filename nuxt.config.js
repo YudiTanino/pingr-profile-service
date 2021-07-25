@@ -22,8 +22,8 @@ export default {
   router: {
     routes:[
       {
-        path: ':id',
-        component: 'pages/profile/_id.vue',
+        path: ':username',
+        component: 'pages/profile/_username.vue',
         name: 'profile-id'
       }
     ]

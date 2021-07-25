@@ -9,6 +9,12 @@
                 </div>
             </div>
         </div>
+        <username />
+        <name />
+        <creationDate v-if="isPublic" />
+        <birthdate v-if="isPublic" />
+        <description />
+        <location v-if="isPublic" v-bind:value="user.location"  />
     </div>
 </template>
 
@@ -24,12 +30,21 @@ export default {
             isPublic: true,
         }
     },
-    async created(){
-        const user = await getUser(this.$axios, this.$route.params.id)
-        this.$store.commit('profile/insert', user)
-    },
     beforeMount() {
         document.querySelector('body').setAttribute('style', 'background:#253140')
     },
+    computed: {
+        isPublic(){
+            return this.$store.state.profile.user.public;
+        },
+        
+        user(){
+            return this.$store.state.profile.user
+        }
+    },
+    async created(){
+        const user = await getUser(this.$axios, this.$route.params.username);
+        this.$store.commit('profile/insert', user);
+    }
 }
 </script>
