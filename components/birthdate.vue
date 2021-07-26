@@ -1,15 +1,16 @@
 <template>
     <div>
-        <span>{{birthdate}}</span>
+        <property property="Nascimento" v-bind:value="dateText"/>
     </div>
 </template>
 
 <script>
 export default {
+    props: ['value'],
     computed: {
-        birthdate() {
-            return this.$store.state.profile.user.birthdate
+        dateText(){
+            return this.value.day + "/" +  this.value.month + "/" + this.value.year
         }
-    },
+    }
 }
 </script>

@@ -1,15 +1,20 @@
 <template>
     <div>
-        <span>{{creationDate}}</span>
+        <property property="Criado em" v-bind:value="dateText"/>
     </div>
 </template>
 
 <script>
 export default {
+    props: ['value'],
     computed: {
-        creationDate() {
-            return this.$store.state.profile.user.creationDate
+        dateText(){
+            return this.value.day + "/" +  this.value.month + "/" + this.value.year
         }
-    },
+    }
 }
 </script>
+
+
+
+value.date.day / value.date.day 

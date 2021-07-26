@@ -16,7 +16,7 @@ export default {
     },
     async beforeMount() {
         try {
-            const data = await this.$axios.$get("/follow/" + this.$route.params.id, { type: 'user' });
+            const data = await this.$axios.$get("/follow/" + this.$route.params.username, { type: 'user' });
             this.follows = data.follows;
             this.followers = data.followers;
         } catch (err) {

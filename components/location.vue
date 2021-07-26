@@ -1,6 +1,6 @@
 <template>
     <div>
-        <property property="Localização" v-bind:value="value"  />
+        <property property="Localização" v-bind:value="value"/>
     </div>
 </template>
 
@@ -9,3 +9,4 @@ export default {
     props: ['value']
 }
 </script>
+

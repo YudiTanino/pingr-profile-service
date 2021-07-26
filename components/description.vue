@@ -1,15 +1,11 @@
 <template>
     <div>
-        <span>{{description}}</span>
+        <property property="Descrição" v-bind:value="value"/>
     </div>
 </template>
 
 <script>
 export default {
-    computed: {
-        description() {
-            return this.$store.state.profile.user.description
-        }
-    },
+    props: ['value']
 }
 </script>

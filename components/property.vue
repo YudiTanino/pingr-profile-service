@@ -1,6 +1,6 @@
 <template>
-    <div>
-        <span>{{property}}</span>
+    <div class = "texto">
+        <span>{{property}}:</span>
         <span>{{value}}</span>
     </div>
 </template>
@@ -10,3 +10,9 @@ export default {
  props: ['property', 'value']
 }
 </script>
+
+<style>
+.texto{
+    @apply text-white text-base;
+}
+</style>

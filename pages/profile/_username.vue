@@ -4,32 +4,23 @@
         <div class="flex flex-col h-screen">
             <div class="grid place-items-center mx-2 my-20">
                 <div class="mt-5">
-                    <ProfileInfo class="mb-3"/>
-                    <Connections/>
+                    <ProfileInfo class="mb-3" v-bind:isPublic = "isPublic" v-bind:user = "user"/>
+                    <Connections />
                 </div>
             </div>
         </div>
-        <username />
-        <name />
-        <creationDate v-if="isPublic" />
-        <birthdate v-if="isPublic" />
-        <description />
-        <location v-if="isPublic" v-bind:value="user.location"  />
     </div>
 </template>
 
 <script>
 import {getUser} from "../../api"
 import PingrHeader from "~/components/header.vue"
+import ProfileInfo from "~/components/profileInfo.vue"
 import Connections from "~/components/connections.vue"
 
 export default {
-    components: { Connections, PingrHeader },
-    data: () => {
-        return {
-            isPublic: true,
-        }
-    },
+    components: { Connections, PingrHeader, ProfileInfo },
+    
     beforeMount() {
         document.querySelector('body').setAttribute('style', 'background:#253140')
     },

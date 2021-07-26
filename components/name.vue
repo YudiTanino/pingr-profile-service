@@ -1,15 +1,18 @@
 <template>
-    <div>
+    <div class="name">
         <span>{{name}}</span>
     </div>
 </template>
 
 <script>
 export default {
-    computed: {
-        name() {
-            return this.$store.state.profile.user.name
-        }
-    },
+    props: ["name"]
 }
 </script>
+
+
+<style>
+.name{
+    @apply text-white font-bold text-xl my-4;
+}
+</style>
