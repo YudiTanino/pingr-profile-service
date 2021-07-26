@@ -24,7 +24,7 @@ export default ({
     @apply flex;
 }
 .profileBox{
-    @apply rounded-md border shadow p-2;
+    @apply rounded-md bg-blue-light shadow p-2;
 }
 .profileCircle{
     @apply rounded-full mx-8;
